@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Andrzej Jurga kl. 4C</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <p>Andrzej Jurga</p>
+            <a href="#"><div>About Me</div></a>
+            <a href="#"><div>My Projects</div></a>
+            <a href="#"><div>Contact</div></a>
+        </header>
+        <div id="banner">
+            <div>
+                <h1>std::cout&lt;&lt;"Hello there!"&lt;&lt;std::endl;</h1>
+            </div>
+        </div>
+        <article>
+            <div id="about">
+                <img src="./images/image.jpg">
+                <h2>About Me</h2>
+                <p>
+                    Nazywam się Andrzej Jurga. Jestem uczniem Technikum Komunikacji im. Hipolita Cegielskiego.
+                    Uwielbiam tworzyć a programowanie otworzyło mi drogę do wykorzystywania komputera przy poznawaniu świata.
+                    Zaczynałem od C++, ponieważ najłatwiej było trafić na materiały do jego nauki. Cieszę się z tego wyboru gdyż, dało mi to solidne podstawy w dalszym rozwoju.  
+                    Obecnie zajmuję się głównie projektami, które sam sobie narzucę. Efekty mojej pracy nad części z nich można zobaczyć na moim GitHubie.
+                </p>
+            </div>
+            <div id="projects">
+                <h2>Projekty:</h2>
+                <div class="row">
+                    <div id="first" onmouseover="play('.video1')" onmouseout="pause('.video1')">
+                        <video class="video1" src="./video/clip1.mp4" preload loop></video>
+                        <h3>Fraktal explorer</h3>
+                        Jest to prototyp gry, w którym można zwiedzać legendarny zbiór mandelbrota.
+                    </div>
+                    <div id="second" onmouseover="play('.video2')" onmouseout="pause('.video2')">
+                        <video class="video2" src="./video/clip2.mp4" preload loop></video>
+                        <h3>Kalkulator trygonometryczny</h3>
+                        Pozwala na graficzną ilustrację przebiegu funkcji trygonometrycznych
+                    </div>
+
+                    <div id="second" onmouseover="play('.video3')" onmouseout="pause('.video3')">
+                        <video class="video3" src="./video/clip3.mp4" preload loop></video>
+                        <h3>System podlewania</h3>
+                        Bada wilgotność gleby oraz dostarcza wodę rośliną
+                    </div>
+                    <div id="second" onmouseover="play('.video4')" onmouseout="pause('.video4')">
+                        <video class="video4" src="./video/clip4.mp4" preload loop></video>
+                        <h3>API kalendarz Google</h3>
+                        Pobiera informację z prywatnego kalendarza i przerabia je na wykresy
+                    </div>
+                </div>
+            </div>
+            <div id=technologies>
+                <h2>Technologie:</h2>
+                <div><img src="./images/cpp.svg"></div>
+                <div><img src="./images/sfml.png"></div>
+                <div><img src="./images/box2d.svg"></div>
+                <div><img src="./images/react.svg"></div>
+                <div><img src="./images/node.svg"></div>
+                <div><img src="./images/html.png"></div>
+                <div><img src="./images/css.svg"></div>
+                <div><img src="./images/js.svg"></div>
+
+
+            </div>
+        </article>
+        <footer>
+            
+        </footer>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
