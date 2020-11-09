@@ -1,3 +1,3 @@
 # zsk
-Repozytorium zawierające materiały z lekcji
-Zespół Szkół Komunikacji im. Hipolita Cegielskiego
+Repozytorium zawierające materiały z pracowni w
+Zespole Szkół Komunikacji im. Hipolita Cegielskiego
