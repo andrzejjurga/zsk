@@ -1,0 +1,36 @@
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    background-color: darkgray;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+
+}
+
+div:nth-child(1){
+    background-color: darkolivegreen;
+    margin: 5px;
+    grid-column: 3 / span 2;
+}
+div:nth-child(2){
+    background-color: rgb(47, 83, 107);
+    margin: 5px;
+    grid-area: 2 / 2 / 3 / 4;
+}
+div:nth-child(3){
+    background-color: rgb(100, 47, 107);
+    margin: 5px;
+    grid-row: 3;
+}
+div:nth-child(4){
+    background-color: rgb(107, 96, 47);
+    margin: 5px;
+    grid-row: 4;
+    grid-column: span 4;
+}
+
+
+

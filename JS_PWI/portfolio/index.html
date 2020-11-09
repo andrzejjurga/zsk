@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Andrzej Jurga kl. 4C</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Podsumowanie umiejętności i projektów Andrzeja Jurgi">
+        <meta name="keywords" content="portfolio,praca,oferty pracy,programista,junior,tworzenie stron www,strona,projektowanie stron internetowych">
+        <link rel="stylesheet" media="screen and (min-width: 1100px)" href="style_large.css"/>
+        <link rel="stylesheet" media="screen and (max-width: 1100px) and (min-width: 600px)" href="style_medium.css"/>
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="style_small.css"/>
+    </head>
+    <body>
+        <header>
+            <p>Andrzej Jurga</p>
+            <a href="#about"><div>O mnie</div></a>
+            <a href="#projects"><div>Moje Projekty</div></a>
+            <a href="#forms"><div>Kontakt</div></a>
+        </header>
+        <div id="banner">
+            <div>
+                <h1>std::cout&lt;&lt;"Hello there!"&lt;&lt;std::endl;</h1>
+            </div>
+        </div>
+        <article>
+            <div id="about">
+                <div id="img"></div>
+                <h2>O mnie</h2>
+                <p>
+                    Nazywam się Andrzej Jurga. Jestem uczniem Technikum Komunikacji im. Hipolita Cegielskiego.
+                    Uwielbiam tworzyć, a programowanie otworzyło mi drogę do wykorzystywania komputera przy poznawaniu świata.
+                    Zaczynałem od C++, ponieważ najłatwiej było trafić na materiały do jego nauki. Cieszę się z tego wyboru gdyż, dało mi to solidne podstawy w dalszym rozwoju.  
+                    Obecnie zajmuję się głównie projektami, które sam sobie narzucę. Efekty mojej pracy nad częścią z nich można zobaczyć na moim GitHubie.
+                </p>
+            </div>
+            <div id="projects">
+                <h2>Projekty:</h2>
+                <div class="row">
+                    <div id="first" onmouseover="play('.video1')" onmouseout="pause('.video1')">
+                        <video class="video1" src="./video/clip1.mp4" preload loop></video>
+                        <h3>Fraktal explorer</h3>
+                        Jest to prototyp gry, w którym można zwiedzać legendarny zbiór mandelbrota.
+                    </div>
+                    <div id="second" onmouseover="play('.video2')" onmouseout="pause('.video2')">
+                        <video class="video2" src="./video/clip2.mp4" preload loop></video>
+                        <h3>Kalkulator trygonometryczny</h3>
+                        Pozwala na graficzną ilustrację przebiegu funkcji trygonometrycznych
+                    </div>
+
+                    <div id="second" onmouseover="play('.video3')" onmouseout="pause('.video3')">
+                        <video class="video3" src="./video/clip3.mp4" preload loop></video>
+                        <h3>System podlewania</h3>
+                        Bada wilgotność gleby oraz dostarcza wodę roślinom
+                    </div>
+                    <div id="second" onmouseover="play('.video4')" onmouseout="pause('.video4')">
+                        <video class="video4" src="./video/clip4.mp4" preload loop></video>
+                        <h3>API kalendarz Google</h3>
+                        Pobiera informację z prywatnego kalendarza i przerabia je na wykresy
+                    </div>
+                </div>
+            </div>
+            <div id=technologies>
+                <h2>Technologie:</h2>
+                <div>
+                    <div><a href="https://isocpp.org/"><img class="tech" src="./images/cpp.svg"></a></div>
+                    <div><a href="https://www.sfml-dev.org/"><img src="./images/sfml.svg"></a></div>
+                    <div><a href="https://box2d.org/about/"><img src="./images/box2d.svg"></a></div>
+                    <div><a href="https://pl.reactjs.org/"><img src="./images/react.svg"></a></div>
+                    <div><a href="https://nodejs.org/en/"><img src="./images/node.svg"></a></div>
+                    <div><a href=""><img src="./images/html.png"></a></div>
+                    <div><a href="https://www.w3.org/Style/CSS/Overview.en.html"><img src="./images/css.svg"></a></div>
+                    <div><a href="https://www.javascript.com/"><img src="./images/js.svg"></a></div>
+                </div>
+            </div>
+            <div id=forms>
+                <h2>Kontakt:</h2>
+                <form>
+                    <input type="text" name="name" placeholder="Imię">
+                    <input type="text" name="surname" placeholder="Nazwisko">
+                    <input type="text" name="email" placeholder="E-mail">
+                    <textarea rows="5" placeholder="treść wiadomości"></textarea>
+                    <div>
+                        <input type="reset" value="Wyczyść">
+                        <input type="submit" value="Wyślij">
+                    </div>
+                </form>
+            </div>
+        </article>
+        <footer>
+            <p>
+                Andrzej Jurga kl. 4C
+            </p>
+            <p>
+                <a href="https://www.zsk.poznan.pl/"> Zespół Szkół Komunikacji im. Hipolita Cegielskiego </a>
+            </p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

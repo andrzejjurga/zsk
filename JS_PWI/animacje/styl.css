@@ -1,0 +1,21 @@
+div{
+    width: 50%;
+    height: 50px;
+    background-color: black;
+    overflow: hidden;
+}
+p{
+    color: yellow;
+    position: relative;
+    animation: a 3s linear;
+}
+
+@keyframes a{
+    from{
+        left: 100%;
+        width: 300%;}
+    to{
+        left: 0%;
+        width: 100%;
+    }
+}

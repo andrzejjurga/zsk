@@ -1,0 +1,12 @@
+body{
+    background-color: chocolate;
+
+}
+
+p{
+    font-size: 40px;
+}
+
+p + p{
+    display: none;
+}

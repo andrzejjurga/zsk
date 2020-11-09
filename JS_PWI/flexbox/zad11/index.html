@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+#menu{
+    display: flex;
+    width: 100%
+}
+#menu a, #menu div{
+
+    width: 100%;
+    background-color: blue;
+    height: 16px;
+}
+a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+#menu a:hover{
+    background-color: gray;
+}
+#dropdown{
+        display: flex;
+    flex-direction: column;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+}
+.content a{
+    display: none;
+}
+#dropdown:hover .content a{
+    display: block;
+    background-color: white;
+    color: gray;
+    border: 1px solid blue;
+}
+#dropdown:hover .content a:hover{
+    background-color: blue;
+    color: white;
+}
+
+</style>
+</head>
+<body>
+    <div id="menu">
+        <a href="#">HOME</a>
+        <div id="dropdown">
+            <a href="#">MAIN SITE
+            <div class="content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </a>
+        </div>
+        <a href="#">SERVICES</a>
+        <a href="#">GALLERY</a>
+        <a href="#">RESOURCES</a>
+    </div>
+</body>
+</html>

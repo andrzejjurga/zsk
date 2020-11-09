@@ -1,0 +1,12 @@
+body{
+    background-color: lightcyan;
+
+}
+
+p{
+    font-size: 12px;
+}
+
+p + p{
+    opacity: 0.7;
+}
