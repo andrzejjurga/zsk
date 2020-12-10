@@ -1,0 +1,24 @@
+.myphoto-section{
+    min-height: 500px;
+}
+
+.bg-myphoto-dark{
+    background-color: #504747;
+    color: white;
+}
+.bg-myphoto-light{
+    background-color: white;
+    color: #504747;
+}
+
+.bg-myphoto-welcome{
+    background-image: url('../images/skyline.png');
+    background-size: cover;
+    color: #504747;
+}
+
+.jumbotron-welcome {
+    background-image: url('../images/skyline.png');
+    background-size: cover;
+    color: white;
+}

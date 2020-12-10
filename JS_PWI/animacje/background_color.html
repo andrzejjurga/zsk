@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>kolor tła</title>
+        <style>
+            div{
+                width: 100px;
+                height: 100px;
+                background-color: pink;
+            }
+            #a{
+                animation-name: an1;
+                animation-duration: 6s;
+                //animation-deley: s; opóźnia początek anmiacji
+            }
+            #b{
+                animation-name: an2;
+                animation-duration: 18s;
+            }
+            #c{
+                animation-name: an1;
+                animation-duration: 2s;
+                animation-iteration-count: 3;
+                animation-timing-function: linear;
+            }
+            #d{
+                animation-name: an1;
+                animation-duration: 0,5s;
+                animation-iteration-count: infinite;
+            }
+            @keyframes an1{
+                from{background-color: pink;}
+                to{background-color: purple;}
+            }
+            @keyframes an2{
+                0% {background-color: pink;}
+                25% {background-color: purple;}
+                75% {background-color: red;}
+                100% {background-color: blue;}
+            }
+        </style>
+    </head>
+    <body>
+        <div id="a"></div>
+        <div id="b"></div>
+        <div id="c"></div>
+        <div id="d"></div>
+        <div id="e"></div>
+    </body>
+</html>
