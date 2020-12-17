@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cw 2</title>
+</head>
+<body>
+    <p id="asd"></p>
+    <script>
+        let suma = 0;
+        let dalej = false;
+        if(prompt("Czy zaczynamy?\ntak/nie")=="tak")
+            dalej = true;
+        while(dalej == true)
+        {
+            suma = suma + parseFloat(prompt("Podaj liczbę:"));
+            if(prompt("Czy dalej?")=="tak")
+                dalej = true;
+            else
+                dalej = false;
+        }
+        document.getElementById("asd").innerHTML ="Suma = " + suma;
+    </script>
+</body>
+</html>

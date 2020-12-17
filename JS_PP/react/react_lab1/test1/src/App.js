@@ -4,73 +4,35 @@ export default class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      userName: "Andrzej",
-      todoItems: [{ action: "Umyć zęby", done: true},
-                  { action: "Zrobić zakupy", done: true},
-                  { action: "Pozmywać naczynia", done: false}],
+      userName: "XD",
       newItemText: ""
     }
-  }
-
-  changeStateData = () => {
-    this.setState({
-      userName: this.state.userName === "Andrzej" ? "Janusz" : "Andrzej"
-    })
-  }
-  updateNewTextValue = (event) => {
-    this.setState({ newItemText: event.target.value});
-  }
-  createNewTodo = () => {
-    if (!this.state.todoItems.find(item => item.action === this.state.newItemText)) {
-      this.setState({
-        todoItems: [...this.state.todoItems,
-        { action: this.state.newItemText, done: false }],
-        newItemText: ""
-      });
-    }
-  }
-
-  toogleToDo = (todo) => this.setState({
-    todoItems:
-      this.state.todoItems.map(item => item.action === todo.action
-      ? {...item, done: !item.done} : item)
-  });
-
-  todoTableRows = () => this.state.todoItems.map(item =>
-    <tr key={item.action}>
-      <td>{item.action}</td>
-      <td>
-        <input type="checkbox" checked={item.done}
-        onChange={() => this.toogleToDo(item)} />
-      </td>
-    </tr>);
-
+  };
   render(){
   return (
     <div className="App">
-      <h4 className="bg-primary text-white text-center p-2">
-        Lista zadań użytkonika {this.state.userName}
-        (Liczba zadań: {this.state.todoItems.filter(t => !t.done).length})
-      </h4>
-      <div className="container-fluid">
-        <div className="my-1">
-          <input className="form-control"
-            value={this.state.newItemText}
-            onChange={this.updateNewTextValue} />
-            <button className="btn btn-primary mt-1"
-            onClick={this.createNewTodo}>Dodaj</button>
+      <nav class="navbar navbar-dark bg-dark justify-content-end">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search for..." aria-label="Search"></input>
+          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </nav>
+      <div class="d-flex" id="wrapper">
+        <div class="bg-dark border-right" id="sidebar-wrapper">
+          <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Layouts</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Pages</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Charts</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Tables</a>
+          </div>
         </div>
-        <table className="table table-striped table-bordered">
-          <thead>
-            <tr><th>Opis</th><th>Wykonanie</th></tr>
-          </thead>
-          <tbody>{this.todoTableRows()}</tbody>
-        </table>
+        <div id="page-content-wrapper">
+          <div class="container-fluid">
+            <h1 class="mt-4">Dashboard</h1>
+          </div>
+        </div>
       </div>
-
-      {/* <button className="btn btn-primary m-2"
-          onClick={this.changeStateData}> Zmień
-      </button> */}
     </div>
   )};
 }

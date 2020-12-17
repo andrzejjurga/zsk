@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cw 8</title>
+    <style>
+        body{
+            background-color: rgb(0, 31, 104);
+            color: white
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Infromacje</legend>
+            <input type="text" name="name" id="name" placeholder="Imię"><br>
+            <input type="text" name="surname" id="surname" placeholder="Nazwisko"><br>
+            <input type="radio" name="plec" id="women" value="Kobieta" checked>Kobieta
+            <input type="radio" name="plec" id="men" value="Mężczyzna">Mężczyzna<br>
+            <select name="status" id="status">
+                <option value="" selected disabled hidden>--wybierz--</option>
+                <option value="panna">panna</option>
+                <option value="kawaler">kawaler</option>
+                <option value="rozwiedziony/a">rozwiedziony/a</option>
+                <option value="wdoweiec">wdowiec</option>
+                <option value="wdowa">wdowa</option>
+              </select><br>
+            <input type="number" name="child" id="child" placeholder="liczba dzieci"><br>
+            <h3>Zainteresowania:</h3>
+            <input type="checkbox" name="interests" id="one" value="Komputery">Komputery<br>
+            <input type="checkbox" name="interests" id="two" value="Motoryzacja">Motoryzacja<br>
+            <input type="checkbox" name="interests" id="three" value="Muzyka">Muzyka<br>
+            <input type="checkbox" name="interests" id="four" value="Filmy">Filmy<br>
+            <input type="checkbox" name="interests" id="five" value="Moda">Moda<br><br>
+            
+            <input type="checkbox" name="textAreaOn" id="on" onclick="area()">Czy chcesz dodać coś o sobie<br>
+            
+            <textarea id="text" rows="5" cols="30" style="display: none;"></textarea><br>
+
+            <input type="button" id="check" value="Podsumuj" onclick="fun()"><br>
+        </fieldset>
+    </form>
+    <p id="asd"></p>
+    <script>
+        function fun(){
+            document.getElementById("asd").innerHTML = document.getElementById("name").value+" "+document.getElementById("surname").value+", ";
+            if(document.getElementById("women").checked)
+                document.getElementById("asd").innerHTML +="płeć: "+ document.getElementById("women").value+", ";
+            else
+                document.getElementById("asd").innerHTML +="płeć: "+ document.getElementById("men").value+", ";
+            document.getElementById("asd").innerHTML +="stan cywilny: "+ document.getElementById("status").value+", ";
+            document.getElementById("asd").innerHTML +="liczba dzieci: "+ document.getElementById("child").value+", ";
+            document.getElementById("asd").innerHTML +="zainteresowania: "
+            if(document.getElementById("one").checked)
+                document.getElementById("asd").innerHTML += document.getElementById("one").value+", ";
+            if(document.getElementById("two").checked)
+                document.getElementById("asd").innerHTML += document.getElementById("two").value+", ";
+            if(document.getElementById("three").checked)
+                document.getElementById("asd").innerHTML += document.getElementById("three").value+", ";
+            if(document.getElementById("four").checked)
+                document.getElementById("asd").innerHTML += document.getElementById("four").value+", ";
+            if(document.getElementById("five").checked)
+                document.getElementById("asd").innerHTML += document.getElementById("five").value+", ";
+            document.getElementById("asd").innerHTML += "<br>" + "Dodarkowe informacje: "+ document.getElementById("text").value;
+        };
+
+        function area(){
+            if(document.getElementById("on").checked)
+                document.getElementById("text").style.display = "block";
+            else
+            {
+                document.getElementById("text").style.display = "none";
+                document.getElementById("text").value = "";
+            }
+        };
+
+    </script>
+</body>
+</html>

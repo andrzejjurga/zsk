@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cw 3</title>
+    <style>
+        body{
+            background-color: rgb(0, 31, 104);
+            color: white
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Płeć</legend>
+            <label for="women">Kobieta</label>
+            <input type="radio" name="plec" id="women" value="women" checked>
+            <label for="women">Mężczyzna</label>
+            <input type="radio" name="plec" id="men" value="men">
+            <input type="button" id="check" value="Sprawdź" onclick="fun()">
+            <label for="komunikat">Komunikat:</label>
+            <input type="text" name="komunikat" id="komunikat" disabled>
+        </fieldset>
+    </form>
+    <script>
+        function fun(){
+            if(document.getElementById('women').checked)
+                document.getElementById('komunikat').value = "Kobieta"
+            else
+                document.getElementById('komunikat').value = "Mężczyzna"  
+        };
+    </script>
+</body>
+</html>

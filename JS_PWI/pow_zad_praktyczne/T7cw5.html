@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cw 5</title>
+    <style>
+        body{
+            background-color: rgb(0, 31, 104);
+            color: white
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Kalkulator</legend>
+            <input type="number" name="color" id="a" placeholder="liczba pierwsza"><br>
+            <input type="number" name="color" id="b" placeholder="liczba druga"><br>
+            <input type="button" id="check" value="dodawanie" onclick="sum()"><br>
+            <input type="button" id="check" value="odejmowanie" onclick="sub()"><br>
+            <input type="button" id="check" value="mnożenie" onclick="mul()"><br>
+            <input type="button" id="check" value="dzielenie" onclick="div()"><br>
+        </fieldset>
+    </form>
+    <p id="asd"></p>
+    <script>
+        function sum(){
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            document.getElementById("asd").innerHTML = a+" + "+b+" = " + (a+b);
+        };
+        function sub(){
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            document.getElementById("asd").innerHTML = a+" - "+b+" = " + (a-b);
+        };
+        function mul(){
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            document.getElementById("asd").innerHTML = a+" * "+b+" = " + (a*b);
+        };
+        function div(){
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            document.getElementById("asd").innerHTML = a+" / "+b+" = " + (a/b);
+        };
+    </script>
+</body>
+</html>

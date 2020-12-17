@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOLOR 2</title>
+    <style>
+        body{
+            background-color: rgb(0, 31, 104);
+            color: white
+        }
+    </style>
+</head>
+<body>
+    <h2>KOLOR</h2>
+    <form>
+        <label for="amount">Wybierz kolor:</label>
+        <input type="text" name="color" id="color"><br>
+        <input type="button" id="btn" value="Koloruj"><br>
+    </form>
+    <p id="asd"></p>
+    <script>
+        btn.addEventListener("click", () => {
+            let k = color.value.toLowerCase();
+            if(k.charAt(0) == '#' && k.length == 7)
+                document.body.style.backgroundColor = k;
+            else if(k.charAt(0) != '#' && k.length == 6)
+            {
+                let tab = k.split("");
+                //console.log(typeof tab);
+                tab.unshift('#');
+                k = tab.join("");
+                document.body.style.backgroundColor = k;
+            }
+        })
+    </script>
+</body>
+</html>

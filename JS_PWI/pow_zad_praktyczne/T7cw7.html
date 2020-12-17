@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cw 7</title>
+    <style>
+        body{
+            background-color: rgb(0, 31, 104);
+            color: white
+        }
+    </style>
+</head>
+<body>
+    <h2>Piramida znaków</h2>
+    <form>
+        <label for="sym">Wybierz znak</label>
+        <select name="sym" id="sym">
+            <option value="*">*</option>
+            <option value="$">$</option>
+            <option value="@">@</option>
+            <option value="#">#</option>
+            <option value="^">^</option>
+            <option value="%">%</option>
+        </select><br>
+        <label for="amount">Ile poziomów ma mieć piramida</label>
+        <input type="number" name="amount" id="amount"><br>
+        <input type="button" id="check" value="Utwórz" onclick="fun()"><br>
+    </form>
+    <p id="asd"></p>
+    <script>
+        function fun(){
+            sym = document.getElementById("sym").value;
+            amount = document.getElementById("amount").value;
+            document.getElementById("asd").innerHTML = "Wybrałeś "+amount+" poziomów piramidy dla znaku: "+sym+"<br>";
+            for(let i = 0; i<amount; i++)
+            {
+                for(let j = 0; j<=i; j++)
+                {
+                    document.getElementById("asd").innerHTML += sym;
+                }
+                document.getElementById("asd").innerHTML += "<br>";
+            }
+        };
+    </script>
+</body>
+</html>

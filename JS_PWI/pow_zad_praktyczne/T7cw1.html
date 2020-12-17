@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cw 1</title>
+</head>
+<body>
+    <p id="asd"></p>
+    <script>
+        let a, b, r, h;
+        var fig = prompt("Wybierz figurę:\nprostokąt,\nkwadrat,\nkoło,\ntrapez");
+        switch (fig) {
+            case 'prostokąt':
+                a = prompt("Podaj bok a");
+                b = prompt("Podaj bok b");
+                document.getElementById('asd').innerHTML ="a= "+ a +"<br>b= " + b + "<br>P= " + a * b;
+            break;
+            case 'kwadrat':
+                a = prompt("Podaj bok a");
+                document.getElementById('asd').innerHTML = "a= " + a + "<br>P= " +a * a;
+            break;
+            case 'koło':
+                r = prompt("Podaj promień");
+                document.getElementById('asd').innerHTML = "r= " + r + "<br>P= " + r * r * 3.14;
+            break;
+            case 'trapez':
+                a = prompt("Podaj podstawe a");
+                b = prompt("Podaj podstawe b");
+                h = prompt("Podaj wysokość");
+                document.getElementById("asd").innerHTML ="a= "+ a +"<br>b= " + b + "<br>h= "+h +"<br>P= " + (Number(a)+Number(b)) * h / 2;
+            break;
+            default:
+                alert("Podałeś niewłaściwą figurę");
+            }
+    </script>
+</body>
+</html>

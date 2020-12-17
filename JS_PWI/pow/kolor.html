@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOLOR</title>
+    <style>
+        body{
+            background-color: rgb(0, 31, 104);
+            color: white
+        }
+    </style>
+</head>
+<body>
+    <h2>KOLOR</h2>
+    <form>
+        <label for="amount">Wybierz kolor:</label>
+        <input type="text" name="color" id="color"><br>
+        <input type="button" id="btn" value="Koloruj"><br>
+    </form>
+    <p id="asd"></p>
+    <script>
+        btn.addEventListener("click", () => {
+            let k = color.value.toLowerCase();
+            switch (k) {
+                case "czerwony":
+                case "red":
+                    document.body.style.backgroundColor = "red";
+                    break;
+                case "niebieski":
+                case "blue":
+                    document.body.style.backgroundColor = "blue";
+                    break;
+                case "zielony":
+                case "green":
+                    document.body.style.backgroundColor = "green";
+                    break;
+                default:
+                    alert("Nie rozpoznano koloru!")
+                    break;
+            }
+        })
+    </script>
+</body>
+</html>
