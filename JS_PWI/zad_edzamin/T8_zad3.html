@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cw 2</title>
+</head>
+<body>
+        <h2>Policz koszt ogłoszenia</h2>
+        <form>
+            Liczba ogłoszeń:<br><input type="number" name="size" id="size" min="0"><br>
+            <input type="checkbox" id="check">Jestem Stałym klientem<br>
+            <input type="button" name="count" id="count" value="Kalkulacja" onclick="fun()">
+        </form>
+        <p id="asd"></p>
+        <script>
+        function fun(){
+            amount = document.getElementById("size").value
+            if(amount<=40)
+            {
+                if(document.getElementById("check").checked)
+                document.getElementById("asd").innerHTML = "Twoje ogłoszenia będą kosztować " + amount * 2.70 +" PLN";
+                else
+                document.getElementById("asd").innerHTML = "Twoje ogłoszenia będą kosztować " + amount * 3+" PLN";
+            }
+            else{
+                if(document.getElementById("check").checked)
+                document.getElementById("asd").innerHTML = "Twoje ogłoszenia będą kosztować " + amount * 1.70+" PLN";
+                else
+                document.getElementById("asd").innerHTML = "Twoje ogłoszenia będą kosztować " + amount * 2+" PLN";
+            }
+        }
+    </script>
+</body>
+</html>

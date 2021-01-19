@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cw 2</title>
+</head>
+<body>
+        <h2>Fabryka żelków</h2>
+        <form>
+            Podaj numer kształtu:<br><input type="number" name="type" id="type" min="0"><br>
+            skomponuj swój kolor, podaj RGB:<br>
+            R:<input type="number" name="R" id="R" min="0" max="255">
+            G:<input type="number" name="G" id="G" min="0" max="255">
+            B:<input type="number" name="B" id="B" min="0" max="255"><br>
+            <input type="button" name="count" id="count" value="Zamów" onclick="fun()"><br><br>
+        </form>
+        <p id="asd"></p>
+        <button id="btn">Wybrany kolor</button>
+        <script>
+        function fun(){
+            type = document.getElementById("type").value
+            switch (type) {
+                case "1":
+                    type = "miś";
+                    break;
+                case "2":
+                    type = "żabka";
+                    break;
+                case "3":
+                    type = "serce";
+                    break;
+                default:
+                    type = "inny kształt"
+                    break;
+            }
+            R = document.getElementById("R").value
+            G = document.getElementById("G").value
+            B = document.getElementById("B").value
+            document.getElementById("asd").innerHTML = "Zamówiłeś żelka: " + type;
+            document.getElementById("btn").style.background = "rgb("+R+","+G+","+B+")";
+        }
+    </script>
+</body>
+</html>

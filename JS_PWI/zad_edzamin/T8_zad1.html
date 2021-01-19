@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cw 1</title>
+</head>
+<body>
+    <p id="asd">To jest przykładowa treść!</p>
+    <form>
+            <input type="button" class="btn" name="red" id="red" value="czerwony" style="background-color: red;" onclick="setRed()">
+            <input type="button" class="btn" name="green" id="green" value="zielony" style="background-color: green;" onclick="setGreen()">
+            <input type="button" class="btn" name="blue" id="blue" value="niebieski" style="background-color: blue;" onclick="setBlue()">
+
+            <select name="action" id="action">
+                <option value="italic">i</option>
+                <option value="bold">B</option>
+              </select>
+            <input type="number" name="size" id="size" placeholder="rozmiar czcionki w %">
+    </form>
+    <script>
+
+        function setRed(){
+            let size = document.getElementById("size").value;
+            let type = document.getElementById("action").value;
+            document.getElementById("asd").style.color = "red";
+            document.getElementById("asd").style.fontSize = size + "%";
+            if(type=="bold")
+                document.getElementById("asd").style.fontWeight = "bold";
+            else
+                document.getElementById("asd").style.fontStyle = "italic";
+        }
+        function setGreen(){
+            let size = document.getElementById("size").value;
+            let type = document.getElementById("action").value;
+            document.getElementById("asd").style.color = "green";
+            document.getElementById("asd").style.fontSize = size + "%";
+            if(type=="bold")
+                document.getElementById("asd").style.fontWeight = "bold";
+            else
+                document.getElementById("asd").style.fontStyle = "italic";
+        }
+        function setBlue(){
+            let size = document.getElementById("size").value;
+            let type = document.getElementById("action").value;
+            document.getElementById("asd").style.color = "blue";
+            document.getElementById("asd").style.fontSize = size + "%";
+            if(type=="bold")
+                document.getElementById("asd").style.fontWeight = "bold";
+            else
+                document.getElementById("asd").style.fontStyle = "italic";
+        }
+    </script>
+</body>
+</html>

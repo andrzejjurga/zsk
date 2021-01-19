@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cw 2</title>
+</head>
+<body>
+    <center>
+
+        <h2>Oblicz koszt dostawy</h2>
+        <form>
+            <input type="checkbox" id="check">Jestem z Zielonej Góry<br><br>
+            albo<br><br>
+            Podaj liczbę kilometrów od Zielonej Góry:<input type="number" name="size" id="size" min="0"><br>
+            <input type="button" name="count" id="count" value="Oblicz" onclick="fun()">
+        </form>
+        <p id="asd"></p>
+    </center>
+        <script>
+        function fun(){
+            if(document.getElementById("check").checked)
+                document.getElementById("asd").innerHTML = "Dowieziemy twoją pizze za darmo"
+            else
+                document.getElementById("asd").innerHTML = "Dowieziemy twoją pizze za " + (document.getElementById("size").value*2) +" złotych";
+        }
+    </script>
+</body>
+</html>

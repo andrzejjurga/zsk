@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cw 3</title>
+</head>
+<body>
+    <h2>Oblicz ile litrów musisz zatankować</h2>
+    <form>
+            Dystans do przejechania w km:<br>
+            <input type="number" id="dystans"><br>
+            Spalanie samochodu w l/100km:<br>
+            <input type="number" id="spalanie"><br>
+            <input type="button" value="OBLICZ" onclick="calc()">
+    </form>
+    <p id="asd"></p>
+    <script>
+
+        function calc(){
+            let suma = 0;
+            suma = Number(document.querySelector("#dystans").value) * Number(document.querySelector("#spalanie").value) / 100;
+
+            document.querySelector("#asd").innerHTML = "Potrzebujesz: " + suma +"L";
+
+        }
+
+    </script>
+</body>
+</html>

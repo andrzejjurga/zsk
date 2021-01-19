@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cw 2</title>
+</head>
+<body>
+        <h2>Kafelki Łazienkowe</h2>
+        <form>
+            Powierzchnia w m<sup>2</sup>:<input type="number" name="size" id="size" min="0"><br>
+            <input type="radio" name="radio" id="check1" checked>Płytki 20 x 20 cm<br>
+            <input type="radio" name="radio" id="check2">Płytki 25 x 12 cm<br>
+            <input type="button" name="count" id="count" value="Przelicz" onclick="fun()">
+        </form>
+        <p id="asd"></p>
+        <script>
+        function fun(){
+            amount = document.getElementById("size").value
+            if(document.getElementById("check1").checked)
+                document.getElementById("asd").innerHTML = "Koszt kafelkowania: " + amount * 70 +"zł";
+            else
+                document.getElementById("asd").innerHTML = "Koszt kafelkowania: " + amount * 80 +"zł";
+        }
+    </script>
+</body>
+</html>

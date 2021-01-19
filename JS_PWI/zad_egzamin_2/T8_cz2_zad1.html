@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cw 1</title>
+</head>
+<body>
+    <h2>Generowanie ciągu arytmetycznego</h2>
+    <form>
+            Pierwszy wyraz A1:<input type="number" name="a" id="a"><br>
+            Różnica ciągu R:<input type="number" name="r" id="r"><br>
+            Liczba wyrazów N:<input type="number" name="n" id="n"><br>
+            <input type="button" value="Generuj ciąg" onclick="calc()">
+    </form>
+    <p id="asd"></p>
+    <script>
+
+        function calc(){
+            let a = document.querySelector("#a").value;
+            let r = document.querySelector("#r").value;
+            let n = document.querySelector("#n").value;
+            document.querySelector("#asd").innerHTML = "Ciąg arytmetyczny zawiera wyrazy: "
+            for(let i = 0; i<n; i++)
+                document.querySelector("#asd").innerHTML += Number(a) + Number(r) * i + ", "; 
+
+        }
+
+    </script>
+</body>
+</html>
