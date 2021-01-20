@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>szyfr</title>
+</head>
+<body>
+    <h1>Szyfrator 0.1</h1>
+    <div>
+        <input type="text" id="pol1" onkeyup="fun()">
+        <span id="asd"></span>
+    </div>
+</body>
+<script>
+    function fun()
+    {
+        text = document.getElementById("pol1").value.toUpperCase();
+        let code = "";
+
+        const regex = new RegExp("[A-Za-z]{1,}");
+        if(!text.match(regex)){
+            document.getElementById("asd").innerText = "invalid"; 
+            return;
+        }
+
+
+        for(let i = 0; i<text.length; i++)
+            if(text.charCodeAt(i) + 2 > 90)
+                code += String.fromCharCode(text.charCodeAt(i) - 24);
+        else
+            code += String.fromCharCode(text.charCodeAt(i) + 2);
+
+        document.getElementById("asd").innerText = code;
+
+    }
+
+</script>
+
+</html>
