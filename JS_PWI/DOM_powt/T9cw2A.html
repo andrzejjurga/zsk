@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T9cw2A</title>
+</head>
+<body>
+    <ul>
+        <li><a href="#" >Jeden</a></li>
+        <li><a href="#" >Dwa</a></li>
+        <li><a href="#" >Trzy</a></li>
+        <li><a href="#" >Cztery</a></li>
+        <li><a href="#" >Pięć</a></li>
+
+    </ul>
+    <form>
+        <input type="button" value="Ukryj menu" onclick="fun1()">
+        <input type="button" value="Pokaż menu" onclick="fun2()">
+    </form>
+    <script>
+
+        function fun1(){
+           let p = document.getElementsByTagName("li");
+           for(let i = 0; i<p.length;i++)
+           {
+               p[i].style.display = "none";
+           }
+        }
+        function fun2(){
+            let p = document.getElementsByTagName("li");
+           for(let i = 0; i<p.length;i++)
+           {
+               p[i].style.display = "block";
+           }
+        }
+    </script>
+</body>
+</html>

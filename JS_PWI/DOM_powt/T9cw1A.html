@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T9cw1A</title>
+</head>
+<body>
+    <h1 class="class1">Nagłówek z klasą class1</h1>
+    <h2 class="class2">Nagłówek z klasą class2</h2>
+    <p class="class1">Akapit z klasą class1</p>
+    <p class="class1">drugi akapit z klasą class1</p>
+    <p id="asd">Akapit bez klasy z identyfikatorem</p>
+    <ul>
+        <li>punkt pierwszy</li>
+        <li>punkt drugi</li>
+        <li>punkt trzeci</li>
+        <li>punkt czwarty</li>
+    </ul>
+    <form>
+        <input type="button" value="Zmień kolor tła pierwszego akapitu z klasą class1" onclick="fun1()"><br><br>
+        <input type="button" value="Zmień kolor tła i tekstu akapity z identyfikatorem" onclick="fun2()"><br><br>
+        <input type="button" value="Zmień kolor tła dwóch ostatnich punktów listy" onclick="fun3()"><br><br>
+    </form>
+    <p id="asd"></p>
+    <script>
+
+        function fun1(){
+           let p = document.getElementsByClassName("class1")
+           p[1].style.backgroundColor ="red";
+        }
+        function fun2(){
+            document.getElementById("asd").style.backgroundColor = "red";
+            document.getElementById("asd").innerText = "Świetnie!";
+        }
+        function fun3(){
+            let li = document.getElementsByTagName("li");
+            li[2].style.backgroundColor ="red";
+            li[3].style.backgroundColor ="red";
+        }
+
+    </script>
+</body>
+</html>
