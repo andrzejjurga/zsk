@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zad3</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="postal_code">
+        <input type="button" id="btn" onclick="fun()" value="Sprawdź">
+    </form>
+</body>
+<script>
+    function fun(){
+        let text = document.querySelector("#postal_code").value;
+        let regex = new RegExp("[0-9a-f]{6}$");
+        if(regex.test(text))
+        {
+            console.log("działa");
+
+        }
+        else
+        {
+            console.log("nie działa");
+
+        }
+        let a = 0;
+        let n = 0;
+        for(let i = 0; i < text.length; i++)
+        {
+            if(text[i].match("^\d$"))
+                n++;
+            else
+                a++;
+        }
+        console.log(text);
+        console.log("litery "+a);
+        console.log("liczby "+n);
+
+
+        //Użytkownik wpisuje 24 znakowy ciąg znaków składający się 
+        //z znaków 0-9 i/lib a-f,
+        //wypisz ile użył liter a ile cyfr
+    }
+</script>
+</html>

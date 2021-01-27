@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zad2</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="postal_code">
+        <input type="button" id="btn" onclick="fun()" value="Sprawdź">
+    </form>
+</body>
+<script>
+    function fun(){
+        let text = document.querySelector("#postal_code").value;
+        let regex = new RegExp("^k.*[^w]a$");
+        if(regex.test(text))
+            console.log("działa");
+        else
+            console.log("nie działa");
+    }
+</script>
+</html>
