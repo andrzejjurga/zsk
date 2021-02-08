@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T9cw4B</title>
+    <style>
+
+        .styled{
+            background-color: black;
+            color: yellow;
+            text-align: center;
+        }
+        .upper{
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, consequatur. Saepe quasi itaque officiis ipsum eligendi beatae aut, consequuntur animi, rerum laborum quisquam fuga, obcaecati expedita optio exercitationem atque praesentium.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, consequatur. Saepe quasi itaque officiis ipsum eligendi beatae aut, consequuntur animi, rerum laborum quisquam fuga, obcaecati expedita optio exercitationem atque praesentium.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, consequatur. Saepe quasi itaque officiis ipsum eligendi beatae aut, consequuntur animi, rerum laborum quisquam fuga, obcaecati expedita optio exercitationem atque praesentium.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, consequatur. Saepe quasi itaque officiis ipsum eligendi beatae aut, consequuntur animi, rerum laborum quisquam fuga, obcaecati expedita optio exercitationem atque praesentium.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, consequatur. Saepe quasi itaque officiis ipsum eligendi beatae aut, consequuntur animi, rerum laborum quisquam fuga, obcaecati expedita optio exercitationem atque praesentium.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, consequatur. Saepe quasi itaque officiis ipsum eligendi beatae aut, consequuntur animi, rerum laborum quisquam fuga, obcaecati expedita optio exercitationem atque praesentium.</p>
+        <input type="button" value="parzyste" onclick="parzyste()">
+        <input type="button" value="nieparzyste" onclick="nieparzyste()">
+        <input type="button" value="trzy" onclick="trzy()">
+        <input type="button" value="ostatni" onclick="ostatni()">
+    </ul>
+
+    <script>
+
+        function parzyste(){
+            var tabP = document.querySelectorAll("p");
+            if(tabP[1].classList.contains('styled')==true && tabP[3].classList.contains('styled')==true && tabP[5].classList.contains('styled')==true)
+            {
+                tabP[1].classList.remove('styled');
+                tabP[3].classList.remove('styled');
+                tabP[5].classList.remove('styled');
+            }
+            else
+            {
+                tabP[1].classList.add('styled');
+                tabP[3].classList.add('styled');
+                tabP[5].classList.add('styled');
+            }
+        }
+        function nieparzyste(){
+            var tabP = document.querySelectorAll("p");
+            if(tabP[0].classList.contains('styled')==true && tabP[2].classList.contains('styled')==true && tabP[4].classList.contains('styled')==true)
+            {
+                tabP[0].classList.remove('styled');
+                tabP[2].classList.remove('styled');
+                tabP[4].classList.remove('styled');
+            }
+            else
+            {
+                tabP[0].classList.add('styled');
+                tabP[2].classList.add('styled');
+                tabP[4].classList.add('styled');
+            }
+        }
+        function trzy(){
+            var tabP = document.querySelectorAll("p");
+            if(tabP[0].classList.contains('styled')==true && tabP[1].classList.contains('styled')==true && tabP[2].classList.contains('styled')==true)
+            {
+                tabP[0].classList.remove('styled');
+                tabP[1].classList.remove('styled');
+                tabP[2].classList.remove('styled');
+            }
+            else
+            {
+                tabP[0].classList.add('styled');
+                tabP[1].classList.add('styled');
+                tabP[2].classList.add('styled');
+            }
+        }
+        function ostatni(){
+            var tabP = document.querySelectorAll("p");
+            if(tabP[5].classList.contains('upper')==true)
+                tabP[5].classList.remove('upper');
+            else
+                tabP[5].classList.add('upper');
+        }
+
+    </script>
+</body>
+</html>

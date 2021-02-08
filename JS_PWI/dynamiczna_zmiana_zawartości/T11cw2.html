@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T11cw2</title>
+    <style>
+        body{
+            background-color: teal;
+        }
+        div{
+            width: 500px;
+            height: 500px;
+            border: white solid 5px;
+            color:thistle;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img{
+            width: 400px;
+            
+        }
+        .border1{
+            border: red solid 2px;
+        }
+        .border2{
+            border: greenyellow solid 2px;
+        }
+    </style>
+</head>
+<body>
+        <div>
+            <img src="./src/emoji1.png">
+        </div>
+        <input type="button" onclick="fun1()" value="klinij mnie">
+        <input type="button" onclick="fun2()" value="klinij mnie też">
+    <script>
+
+        function fun1(){
+            const img = document.querySelector("img");
+            img.setAttribute("src", "./src/emoji2.jpg");
+            img.setAttribute("alt", "hahah");
+            img.setAttribute("class", "border1");
+            const btn = document.querySelectorAll("input");
+            btn[0].setAttribute("value", "nie klikaj mnie!");
+            btn[1].setAttribute("value", "kliknij mnie też");
+            
+        }
+        function fun2(){
+            const img = document.querySelector("img");
+            img.setAttribute("src", "./src/emoji3.jpg");
+            img.setAttribute("alt", "beczka śmiechu haha");
+            img.setAttribute("class", "border2");
+            const btn = document.querySelectorAll("input");
+            btn[1].setAttribute("value", "Ups");
+            btn[0].setAttribute("value", "Kliknij mnie");
+        }
+
+        
+            
+    </script>
+</body>
+</html>

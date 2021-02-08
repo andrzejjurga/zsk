@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T9cw5A</title>
+    <style>
+
+        .styled{
+            background-color: black;
+            color: yellow;
+            text-align: center;
+        }
+        .upper{
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        .buttons1{
+            height: 50px;
+            width: 100px;
+            background-color: turquoise;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .buttons2{
+            height: 50px;
+            width: 100px;
+            background-color: rgb(14, 121, 110);
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box1{
+            height: 180px;
+            background-color: cadetblue;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+        }
+        .box2{
+            height: 180px;
+            background-color: cadetblue;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+
+        <div class="box1" >
+            <div class="buttons1"><a href="#">Link1</a></div>
+            <div class="buttons1"><a href="#">Link2</a></div>
+            <div class="buttons1"><a href="#">Link3</a></div>
+        </div>
+        <input type="button" value="ustawienie" onclick="ustawienie()">
+        <input type="button" value="kolory" onclick="kolory()">
+
+    <script>
+
+        function kolory(){
+            var tabP = document.getElementsByTagName("div");
+            for(let i = 0;i<tabP.length;i++)
+            {
+                if(tabP[i].classList.contains('buttons1'))
+                {
+                    tabP[i].classList.remove('buttons1');
+                    tabP[i].classList.add('buttons2');
+                }
+                else if(tabP[i].classList.contains('buttons2'))
+                {
+                    tabP[i].classList.remove('buttons2');
+                    tabP[i].classList.add('buttons1');
+                }
+            }
+        }
+
+            function ustawienie(){
+            var tabP = document.getElementsByTagName("div");
+                if(tabP[0].classList.contains('box1'))
+                {
+                    tabP[0].classList.remove('box1');
+                    tabP[0].classList.add('box2');
+                }
+                else if(tabP[0].classList.contains('box2'))
+                {
+                    tabP[0].classList.remove('box2');
+                    tabP[0].classList.add('box1');
+                }
+            }
+            
+    </script>
+</body>
+</html>

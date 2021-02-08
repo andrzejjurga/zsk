@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T11cw1</title>
+    <style>
+        .klasa{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            color:thistle;
+        }
+        .obrazek{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+        <div></div>
+        <img src="./src/donat.jpg">
+        <a href="https://andrzejjurga.github.io/">Link</a>
+        <hr>
+        <input type="button" onclick="fun1()" value="przycisk 1">
+        <input type="button" onclick="fun2()" value="przycisk 2">
+        <input type="button" onclick="fun3()" value="przycisk 3">
+    <script>
+
+        function fun1(){
+            const div = document.querySelector("div");
+            div.setAttribute("class", "klasa");
+            div.innerText = "Tekst testowy Tekst testowy Tekst testowy";
+        }
+        function fun2(){
+            const img = document.querySelector("img");
+            img.setAttribute("class", "obrazek");
+        }
+        function fun3(){
+            const href = document.querySelector("a");
+            href.setAttribute("href", "https://github.com/andrzejjurga");
+        }
+        
+            
+    </script>
+</body>
+</html>

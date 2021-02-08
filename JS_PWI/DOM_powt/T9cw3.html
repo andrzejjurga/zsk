@@ -22,19 +22,27 @@
 </head>
 <body>
     <ul>
-        <div onclick="fun()"></div>
-        <div onclick="fun()"></div>
-        <div onclick="fun()"></div>
-        <div onclick="fun()"></div>
-        <div onclick="fun()"></div>
+        <div onclick="fun(this)"></div>
+        <div onclick="fun(this)"></div>
+        <div onclick="fun(this)"></div>
+        <div onclick="fun(this)"></div>
+        <div onclick="fun(this)"></div>
 
     </ul>
 
     <script>
 
-        function fun(){
-            console.log("elo");
-            
+        function fun(id){
+            if(id.classList.contains('red'))
+            {
+                id.classList.add('white');
+                id.classList.remove('red');
+            }
+            else
+            {
+                id.classList.add('red');
+                id.classList.remove('white');
+            }
         }
 
     </script>
