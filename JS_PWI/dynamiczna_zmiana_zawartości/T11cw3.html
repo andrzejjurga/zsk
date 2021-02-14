@@ -6,68 +6,89 @@
     <title>T11cw3</title>
     <style>
         html, body{
-
+            margin: 0;
+            padding: 0;
         }
         #main{
             margin: 0;
-            width: 100%;
-            height: 99vh;
-            background-color: teal;
             padding: 0;
+            width: 100vh;
+            height: 100vh;
+            background-color: teal;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
         }
-        div{
-            width: 500px;
-            height: 500px;
-            border: white solid 5px;
-            color:thistle;
+        #picture{
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+        }
+        .btn{
+            width: 30px;
+            height: 30px;
+            background-color: teal;
+            border: white solid 1px;
+            color: white;
+        }
+        .pressed{
+            background-color: grey;
         }
         img{
             width: 400px;
             
         }
-        .border1{
-            border: red solid 2px;
-        }
-        .border2{
-            border: greenyellow solid 2px;
+        p{
+            color: white;
+            font-size: 40px;
         }
     </style>
 </head>
 <body>
     <div id="main">
-        <div>
-            <img src="./src/emoji1.png">
+        <div id="picture">
+            <img id="img" src="./src/emoji1.png">
         </div>
-        <input type="button" onclick="fun1()" value="klinij mnie">
-        <input type="button" onclick="fun2()" value="klinij mnie też">
+        <p id="asd">Dobra emota</p>
+        <div>
+            <input class="btn" type="button" value="1">
+            <input class="btn" type="button" value="2">
+            <input class="btn" type="button" value="3">
+            <input class="btn" type="button" value="4">
+        </div>
     </div>
         <script>
-
-        function fun1(){
-            const img = document.querySelector("img");
-            img.setAttribute("src", "./src/emoji2.jpg");
-            img.setAttribute("alt", "hahah");
-            img.setAttribute("class", "border1");
-            const btn = document.querySelectorAll("input");
-            btn[0].setAttribute("value", "nie klikaj mnie!");
-            btn[1].setAttribute("value", "kliknij mnie też");
             
-        }
-        function fun2(){
-            const img = document.querySelector("img");
-            img.setAttribute("src", "./src/emoji3.jpg");
-            img.setAttribute("alt", "beczka śmiechu haha");
-            img.setAttribute("class", "border2");
-            const btn = document.querySelectorAll("input");
-            btn[1].setAttribute("value", "Ups");
-            btn[0].setAttribute("value", "Kliknij mnie");
-        }
-
-        
+            var btns = document.getElementsByClassName('btn');
+            Array.from(btns).forEach(function(element){
+                element.addEventListener("click", cbChange, false);
+            });
             
-    </script>
+            function cbChange(){
+                var images = new Array(4);
+                images[0] = "./src/emoji1.png";
+                images[1] = "./src/emoji2.jpg";
+                images[2] = "./src/emoji3.jpg";
+                images[3] = "./src/emoji4.jfif";
+                var text = new Array(4);
+                text[0] = "dobra emota";
+                text[1] = "kurcze ale szalone";
+                text[2] = "bajo jajo";
+                text[3] = "to siedzenie w domu chyba mi szkodzi";
+            console.log(this.value);
+            var btns = document.getElementsByClassName('btn');
+            btns[0].classList.remove("pressed");
+            btns[1].classList.remove("pressed");
+            btns[2].classList.remove("pressed");
+            btns[3].classList.remove("pressed");
+            btns[this.value-1].classList.add("pressed");
+            document.querySelector("#asd").innerHTML = text[this.value-1];
+            var img = document.querySelector("#img").setAttribute("src", images[this.value-1]);
+
+            }
+        </script>
 </body>
 </html>
