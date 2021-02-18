@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zad2</title>
+</head>
+    <body>
+        <input type="text" id="text">
+        <input type="button" onclick="fun()" value="palindrom">
+    </body>
+<script>
+    function reverseString(str) {
+        return str.split("").reverse().join("");
+    }
+
+    function fun(){
+        var text = document.getElementById("text").value.replace(/\s+/g, '').toLowerCase();
+        if(text==reverseString(text)) console.log("tak"); else console.log("nie");
+        }//A to kanapa pana Kota
+
+</script>
+</html>
