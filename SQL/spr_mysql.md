@@ -26,7 +26,10 @@ INSERT INTO studenci VALUES
  (7, 'Marek', 'Pawlak', 'P'); 
 ```
 
-
+Aby wyświetlić tabele wpisujemy
+```sql
+shwo tables;
+```
 
 
 
@@ -37,13 +40,11 @@ W takiej sytuacji nie można posłużyć się poleceniem
 DELETE FROM olejki;
 ```  
 Klucz obcy zablokuje takie działanie. Należy go najpierw wyłączyć lub usunąc.
-1. ```sql
+```sql
 SET FOREIGN_KEY_CHECKS = 0;
-```
-2. ```sql
+
 DELETE FROM olejki;
-```
-3. ```sql
+
 SET FOREIGN_KEY_CHECKS = 1;
 ```
 
