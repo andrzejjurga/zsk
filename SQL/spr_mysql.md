@@ -34,8 +34,23 @@ Po więcej informacji podajemy
 ```sql
 describe studenci;
 ```
-
-
+## Tworzenie widoku
+view zostało zaimplementowane w wersji 5 MySQL. Można dzięki nim prezentować dane w wygodny sposób. Widoki nie kupiują danych a zawierają jedynie definicje jak gotowy wynik powinien wyglądać. 
+```sql
+CREATE OR REPLACE VIEW studenci_view AS
+SELECT
+ S.imie AS imie_studenta,
+ S.nazwisko AS nazwisko_studenta,
+ U.nazwa AS nazwa_uczelni
+FROM
+ studenci S, uczelnie U
+WHERE
+ S.typ_uczel_id = U.typ_uczel_id; 
+```
+Aby użyć widoku piszemy:
+```sql
+SELECT * FROM studenci_view; 
+```
 
 
 ## Kasowanie wszystkich danych z tabel:
