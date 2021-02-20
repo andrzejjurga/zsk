@@ -28,7 +28,11 @@ INSERT INTO studenci VALUES
 
 Aby wyświetlić tabele wpisujemy
 ```sql
-shwo tables;
+show tables;
+```
+Po więcej informacji podajemy
+```sql
+describe studenci;
 ```
 
 
