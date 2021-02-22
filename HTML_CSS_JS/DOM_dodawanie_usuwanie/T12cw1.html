@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T12cw1</title>
+    <style>
+        #main{
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+    <button id="btn">Dodaj</button>
+
+    <script>
+        btn.addEventListener("click", () => {
+            let h1 = document.createElement("p");
+            h1.innerHTML = "<h1>Nagłówek</h1><hr><a href=\"https://github.com/andrzejjurga\">Strona 1</a><br><a href=\"https://andrzejjurga.github.io/\">Strona 2</a>";
+            let div = document.querySelector("#main");
+            div.appendChild(h1);
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T12cw2</title>
+    <style>
+        #main{
+            width: 100%;
+            border-radius: 5px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #header{
+            background-color: rgb(76, 76, 139);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border-radius: 5px 5px 0px 0px;
+        }
+        #header div{
+            background-color: rgb(76, 76, 139);
+            color: white;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        #header div input{
+            width: 70vw;
+            border-radius: 5px;
+        }
+        #header div button{
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        #content{
+            background-color: yellow;
+        }
+
+        #line{
+            background-color: rgb(182, 182, 182);
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <h2>LISTA ZADAŃ:</h2>
+            <div>
+                <input type="text" id="text" placeholder="Wpisz treść zadania...">
+                <button id="btn">Dodaj</button>
+            </div>
+        </div>
+        <div id="content"></div>
+    </div>
+        
+    <script>
+        btn.addEventListener("click", () => {
+            let p = document.createElement("div");
+            let text = document.querySelector("#text").value;
+            p.innerHTML = text;
+            p.classList.add("line");
+            let div = document.querySelector("#content");
+            div.appendChild(p);
+        })
+
+    </script>
+</body>
+</html>
