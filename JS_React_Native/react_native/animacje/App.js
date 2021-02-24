@@ -1,47 +1,53 @@
 import React, { Component } from "react";
-import { Animated, Text, View, StyleSheet, Button, Image, ImageBackground, PixelRatio } from "react-native";
+import { Animated, Text, View, StyleSheet, Switch, Image, ImageBackground, PixelRatio, Easing } from "react-native";
 import Slider from '@react-native-community/slider';
+import { linear } from "react-native/Libraries/Animated/src/Easing";
 
 
 class App extends Component {
+  
   state = {
     anim: new Animated.Value(0),
-    vel: 10,
+    anim2: new Animated.Value(0),
+    vel: 1,
+    vel2: 1,
+    switchValue: false,
+    switchValue2: false,
   };
 
-fadeIn = () => {
-    Animated.loop(Animated.sequence([Animated.timing(this.state.anim, {
-      toValue: 1,
-      duration: 10000,
-      useNativeDriver:true,
-    }),
-   Animated.delay(0), 
-   Animated.timing(this.state.anim, {
-      toValue: 0,
-      duration: 0,
-      useNativeDriver:true,
-    }),
+  spin = () => {
+    Animated.loop(
+      Animated.timing(this.state.anim, {
+        toValue: 1,
+        duration: 3600,
+        useNativeDriver: false,
+        easing: Easing.linear,
+      })
+    ).start();
+  }
 
-  ])).start();
-  };
-
-  fadeOut = () => {
-    Animated.loop(Animated.timing(this.state.anim, {
-      toValue: 0,
-      duration: 5000,
-      useNativeDriver:true,
-    })).start();
-    };
+  spin2 = () => {
+    Animated.loop(
+      Animated.timing(this.state.anim2, {
+        toValue: 1,
+        duration: 3600,
+        useNativeDriver: false,
+        easing: Easing.linear,
+      })
+    ).start();
+  }
 
 
-  fadeStop = () => {
+  spinStop = () => {
     Animated.timing(this.state.anim).stop();
+  };  
+  spinStop2 = () => {
+    Animated.timing(this.state.anim2).stop();
   };
 
-
-  setDeg(i)
+  setDeg(i, speed)
   {
-    let k = i*this.state.vel;
+    let k = i*speed;
     return k.toString()+'deg'
   }
 
@@ -50,6 +56,7 @@ fadeIn = () => {
       <>
       <ImageBackground source={require('./src/bcg.png')} style={styles.image}>
         <View style={styles.container}> 
+        {/*Wiatrak 1*/}
           <View style={{position:"absolute", top:80, left:240}}>
             <Image source={require('./src/pole.png')} style={styles.pole}></Image>
           </View>
@@ -61,7 +68,33 @@ fadeIn = () => {
                 
                 { rotateZ: this.state.anim.interpolate({
                   inputRange: [0, 1],
-                  outputRange: [this.setDeg(0), this.setDeg(360)]
+                  outputRange: [this.setDeg(0, this.state.vel), this.setDeg(360, this.state.vel)]
+                  })  ,
+                },
+                { translateY: 21
+                    ,
+                },
+                { translateX: 0
+                    ,
+                },
+              
+            ]
+           }
+          ]}></Animated.Image>
+          </View>
+          {/*Wiatrak 2*/}
+          <View style={{position:"absolute", top:80, left:600}}>
+            <Image source={require('./src/pole.png')} style={styles.pole}></Image>
+          </View>
+          <View style={{position:"absolute", top:60, left:600}}>
+            <Animated.Image source={require('./src/wings.png')} style={[ styles.pole, 
+           {
+            transform: 
+            [
+                
+                { rotateZ: this.state.anim2.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [this.setDeg(0, this.state.vel2), this.setDeg(360, this.state.vel2)]
                   })  ,
                 },
                 { translateY: 21
@@ -85,23 +118,25 @@ fadeIn = () => {
               style={{width: 150, height: 40}}
               minimumValue={0}
               maximumValue={10}
-              minimumTrackTintColor="#FFFFFF"
-              maximumTrackTintColor="#000000"
               onValueChange = {value => this.setState({vel: value})}
             />
           </View> 
-          <Button title="pause" onPress={this.fadeIn}></Button>
+          <Switch
+            value={this.state.switchValue}  
+            onValueChange ={(switchValue)=>this.setState({switchValue}, switchValue ? this.spin :this.spinStop)}
+          />
           <View style={{alignItems:"center"}}>
             <Slider
               style={{width: 150, height: 40}}
               minimumValue={0}
               maximumValue={10}
-              minimumTrackTintColor="#FFFFFF"
-              maximumTrackTintColor="#000000"
-              onValueChange = {value => this.setState({vel: value})}
+              onValueChange = {value => this.setState({vel2: value})}
             />
           </View> 
-          <Button title="pause"></Button>
+          <Switch
+            value={this.state.switchValue2}  
+            onValueChange ={(switchValue2)=>this.setState({switchValue2}, switchValue2 ? this.spin2 :this.spinStop2)}
+          />
         </View>
         <View style={{flexDirection:"row"}}>
           <Text style={{color:'white'}}>Gęstość opadu:</Text>
@@ -110,8 +145,6 @@ fadeIn = () => {
               style={{width: 200, height: 40}}
               minimumValue={0}
               maximumValue={10}
-              minimumTrackTintColor="#FFFFFF"
-              maximumTrackTintColor="#000000"
               onValueChange = {value => this.setState({vel: value})}
             />
           </View> 
@@ -121,6 +154,8 @@ fadeIn = () => {
     );
   }
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
