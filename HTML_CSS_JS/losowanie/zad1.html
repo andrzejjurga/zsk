@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zad1</title>
+</head>
+<body>
+    
+</body>
+    <script>
+    let tab =  Array.from({length: 100}, () => Math.floor(Math.random() * 100));
+    
+    tab.forEach(element => {
+        console.log(tab[element]);
+    });
+
+    max = tab[0];
+    maxWyst = 1;
+    for(let i = 1; i<tab.length; i++)
+    {
+        if(tab[i]>max)
+        {
+            max = tab[i];
+            maxWyst = 1;
+        }
+        else if(tab[i]==max)
+            maxWyst++;
+    }
+
+    
+
+            
+    console.log("Największa liczba:")
+    console.log(max);
+    console.log(maxWyst);
+
+    </script>
+</html>
