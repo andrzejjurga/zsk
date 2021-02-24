@@ -23,3 +23,7 @@ Można je również dodawać do istniejących tabel
 ```sql
 CREATE INDEX indexName ON tableName (ID, LName, FName, LOC);
 ```
+## Kasowanie indeksów
+```sql
+DROP INDEX indexName ON tableName;
+```
