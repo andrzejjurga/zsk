@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Animated, Text, View, StyleSheet, Switch, Image, ImageBackground, PixelRatio, Easing } from "react-native";
+import { Animated, Text, View, StyleSheet, Switch, Image, ImageBackground, PixelRatio, Easing, Button } from "react-native";
 import Slider from '@react-native-community/slider';
 import { linear } from "react-native/Libraries/Animated/src/Easing";
 
@@ -9,17 +9,28 @@ class App extends Component {
   state = {
     anim: new Animated.Value(0),
     anim2: new Animated.Value(0),
+    cloudAnim: new Animated.Value(0),
     vel: 1,
     vel2: 1,
     switchValue: false,
     switchValue2: false,
   };
 
+  cloudMovement = () => {
+    Animated.loop(
+      Animated.timing(this.state.cloudAnim, {
+        toValue: 1,
+        duration: 8000,
+        useNativeDriver: true,
+      })
+    ).start();
+  }
+
   spin = () => {
     Animated.loop(
       Animated.timing(this.state.anim, {
         toValue: 1,
-        duration: 3600,
+        duration: 7200,
         useNativeDriver: false,
         easing: Easing.linear,
       })
@@ -109,6 +120,22 @@ class App extends Component {
           ]}></Animated.Image>
           </View>
 
+          <View style={{position:"absolute", top:-150, left:-60}}>
+            <Animated.Image source={require('./src/cloud.png')} style={[ styles.pole, 
+           {
+            transform: 
+            [
+                {translateX: this.state.cloudAnim.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [20, 1000]
+                }),
+
+                },
+            ]
+           }
+          ]}></Animated.Image>
+          </View>
+
         </View>
       </ImageBackground>
       <View style={styles.navBar}>
@@ -137,6 +164,7 @@ class App extends Component {
             value={this.state.switchValue2}  
             onValueChange ={(switchValue2)=>this.setState({switchValue2}, switchValue2 ? this.spin2 :this.spinStop2)}
           />
+          <Button title="Chmura" onPress={this.cloudMovement}/>
         </View>
         <View style={{flexDirection:"row"}}>
           <Text style={{color:'white'}}>Gęstość opadu:</Text>
