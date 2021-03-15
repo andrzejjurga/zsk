@@ -4,87 +4,84 @@ import {
   StyleSheet,
   View,
   Text,
-  Animated,
-  Button
+  Button,
+  TextInput
 } from 'react-native';
 
 
 
 class App extends Component {
+constructor(props)
+{
+  super(props);
+  this.state={Num1:0, Num2:0, Wynik:0};
+}
 
-  state = {
-    anim: new Animated.Value(0),
-    vel: 10,
-  };
+Sum=()=>
+{
+  var N1= parseInt(this.state.Num1);
+  var N2= parseInt(this.state.Num2);
+  var wyn = N1 + N2;
+  this.setState({Wynik}) = wyn;
+  alert(wyn);
+}
 
-  second = () => {
-    Animated.loop(
-    Animated.timing(this.state.anim, {
-      toValue: 1,
-      duration: 6000,
-      useNativeDriver:true,
-    })).start();
-  };
+Diff=()=>
+{
+  var N1= parseInt(this.state.Num1);
+  var N2= parseInt(this.state.Num2);
+  var wyn = N1 - N2;
+  alert(wyn);
+}
+
+Mul=()=>
+{
+  var N1= parseInt(this.state.Num1);
+  var N2= parseInt(this.state.Num2);
+  var wyn = N1 * N2;
+  alert(wyn);
+}
+
+Div=()=>
+{
+  var N1= parseInt(this.state.Num1);
+  var N2= parseInt(this.state.Num2);
+  var wyn = N1 / N2;
+  alert(wyn);
+}
   render(){
 
     return (
     <>
-    <View>
-    <Button title="clock" onPress={this.second}></Button>
-    </View>
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-
-      <Animated.View style={[styles.box, {transform: 
-              [
-                { rotateZ: this.state.anim.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: ['0deg', '360deg']
-                  }),
-                },
-                {
-                translateY: 5,
-              },
-              {translateX: 50
-                ,},
-            ],}]}>
-
-      </Animated.View>
-      <Animated.View style={[styles.box2, {transform: 
-              [
-                {
-                translateY: -5,
-              },
-              {translateX: 95
-                ,},
-                { rotateZ: this.state.anim.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: ['0deg', '360deg']
-                  })  ,
-                },
-            ],}]}>
-
-      </Animated.View>
+    <View style={{flex: 1, justifyContent: 'space-around', alignItems: 'center', backgroundColor: 'green'}}>
+  
+      
+    <TextInput
+        style={{height: 40, width: 150, backgroundColor: 'orange'}}
+        placeholder="Liczba 1"
+        onChangeText={Num1=>this.setState({Num1})}
+        />
+    <TextInput
+        style={{height: 40, width: 150, backgroundColor: 'orange'}}
+        placeholder="Liczba 2"
+        onChangeText={Num2=>this.setState({Num2})}
+        />
+      <View>
+      <Button title="Oblicz sume" onPress={this.Sum}></Button>
+      <Button title="Oblicz różnice" onPress={this.Diff}></Button>
+      <Button title="Oblicz iloczyn" onPress={this.Mul}></Button>
+      <Button title="Oblicz iloraz" onPress={this.Div}></Button>
       </View>
+      <Text
+        style={{height: 40, width: 150, backgroundColor: 'orange'}}
+        value={this.state.Wynik}
+        />
+    </View>
     </>
   );
 };
 }
 
-const styles = StyleSheet.create({
-  box: {
-    backgroundColor: 'red',
-    width:100,
-    height:10,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  box2: {
-    backgroundColor: 'green',
-    width:80,
-    height:10,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-});
+
 
 export default App;

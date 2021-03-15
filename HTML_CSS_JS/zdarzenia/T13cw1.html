@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T13cw1</title>
+    <style>
+        #main{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #obrazek{
+            width: 400px;
+            
+        }
+        .miniaturka{
+            width: 80px;
+            margin: 5px;
+        }
+        .selected{
+            border-bottom: 2px solid blue;
+        }
+        .over{
+            border-bottom: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Galeria obrazów z miniaturkami</h1>
+        <img src="src/emoji4.jfif" id="obrazek">
+        <div id="miniaturki">
+            <img id="first" src="src/emoji4.jfif" class="miniaturka" class="selected">
+            <img id="second" src="src/emoji1.png" class="miniaturka">
+            <img id="third" src="src/emoji2.jpg" class="miniaturka">
+            <img id="last" src="src/emoji3.jpg" class="miniaturka">
+        </div>
+    </div>
+    <script>
+        var img = document.getElementById("obrazek");
+        function removeAll()
+        {
+            let all = document.querySelectorAll(".miniaturka");
+            all.forEach(element => {
+                element.classList.remove("selected");
+            });
+        }
+
+
+        var first = document.getElementById("first");
+        first.addEventListener('mouseover', () => {
+            img.setAttribute("src", "src/emoji4.jfif");
+            first.classList.add("over");
+            removeAll();
+        });
+        first.addEventListener('mouseout', () => {
+            first.classList.remove("over");
+            first.classList.add("selected");
+        });
+
+        var second = document.getElementById("second");
+        second.addEventListener('mouseover', () => {
+            img.setAttribute("src", "src/emoji1.png");
+            second.classList.add("over");
+            removeAll();
+        });
+        second.addEventListener('mouseout', () => {
+            second.classList.remove("over");
+            second.classList.add("selected");
+        });
+
+        var third = document.getElementById("third");
+        third.addEventListener('mouseover', () => {
+            img.setAttribute("src", "src/emoji4.jfif");
+            third.classList.add("over");
+            removeAll();
+        });
+        third.addEventListener('mouseout', () => {
+            third.classList.remove("over");
+            third.classList.add("selected");
+        });
+
+        var last = document.getElementById("last");
+        last.addEventListener('mouseover', () => {
+            img.setAttribute("src", "src/emoji4.jfif");
+            last.classList.add("over");
+            removeAll();
+        });
+        last.addEventListener('mouseout', () => {
+            last.classList.remove("over");
+            last.classList.add("selected");
+        });
+            
+    </script>
+</body>
+</html>

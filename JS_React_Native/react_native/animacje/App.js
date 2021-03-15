@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Animated, Text, View, StyleSheet, Switch, Image, ImageBackground, PixelRatio, Easing, Button } from "react-native";
 import Slider from '@react-native-community/slider';
-import { linear } from "react-native/Libraries/Animated/src/Easing";
 
 
 class App extends Component {
@@ -66,6 +65,7 @@ class App extends Component {
     return (
       <>
       <ImageBackground source={require('./src/bcg.png')} style={styles.image}>
+
         <View style={styles.container}> 
         {/*Wiatrak 1*/}
           <View style={{position:"absolute", top:80, left:240}}>

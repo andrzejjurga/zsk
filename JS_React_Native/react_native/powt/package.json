@@ -1,5 +1,5 @@
 {
-  "name": "animacje",
+  "name": "graphql",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,16 +10,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@react-native-community/slider": "^3.0.3",
     "react": "16.13.1",
-    "react-native": "0.63.4",
-    "react-native-make-it-rain": "^1.1.1",
-    "react-native-svg": "^12.1.0",
-    "react-native-svg-uri": "^1.2.3"
+    "react-native": "0.63.4"
   },
   "devDependencies": {
-    "@babel/core": "7.12.16",
-    "@babel/runtime": "7.12.13",
+    "@babel/core": "7.12.17",
+    "@babel/runtime": "7.12.18",
     "@react-native-community/eslint-config": "1.1.0",
     "babel-jest": "25.5.1",
     "eslint": "6.8.0",

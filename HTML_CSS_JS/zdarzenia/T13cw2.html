@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T13cw2</title>
+    <style>
+        #main{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        #box{
+            width: 255px;
+            height: 255px;
+            background-color: cadetblue;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h2 id="XY">MouseX: 0 MouseY: 0</h2>
+        <div id="box">
+            <p id="asd"></p>
+        </div>
+
+    </div>
+    <script>
+        var XY = document.getElementById("XY");
+        var asd = document.getElementById("asd");
+        var box = document.getElementById("box");
+        var main = document.getElementById("main");
+        box.addEventListener('mousemove', function(e) {
+            // Get the target
+            const target = e.target;
+
+            // Get the bounding rectangle of target
+            const rect = target.getBoundingClientRect();
+
+            // Mouse position
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            main.style.backgroundColor = "rgb("+x+", "+y+", "+(parseInt(x)+parseInt(y))/2 +")";
+            XY.innerText = "MouseX: "+x+" MouseY: "+y;
+            asd.innerText = "RGB("+x+", "+y+", "+(parseInt(x)+parseInt(y))/2 +")";
+
+        });
+
+            
+    </script>
+</body>
+</html>

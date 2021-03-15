@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T12cw3</title>
+    <style>
+        td {
+            border: 1px solid black;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h3>Tabliczka mnożenia</h3>
+    <label>Podaj liczbę początkową:</label>
+    <input type="number" id="a"><br>
+    <label>Podaj liczbę końcową:</label>
+    <input type="number" id="b"><br>
+    <input type="button" id="btn" value="Utwórz">
+    <div id="asd"></div>
+
+    <script>
+        var i = 0
+        btn.addEventListener("click", () => {
+            let a = document.getElementById("a").value;
+            let b = document.getElementById("b").value;
+            a = parseInt(a, 10);
+            b = parseInt(b, 10);
+            console.log(a + ", " + b);
+            if(a>b) alert("Początek nie może być większy od końca");
+            else if(isNaN(a) || isNaN(b)) alert("Usupełnij pola");
+            else{
+
+                console.log("kk");
+
+
+
+                let line ="<table> <tr><td>"+"_"+"</td>";
+                let tablica = document.getElementById("asd");
+                    for(let i = a; i<=b; i++){
+                        line += "<td>" + i + "</td>";
+                    }
+                    line+="</tr>";
+                        for(let i = a; i<=b; i++)
+                        {
+                            line+="<tr>";
+                                line += "<td>" + i + "</td>";
+                                for(let j = a; j<=b; j++)
+                                {
+                                    line += "<td>" + i*j + "</td>";
+                                }
+                            line+="</tr>";
+                        }
+                line +="</table> </tr>";
+                tablica.innerHTML = line;
+            }
+        })
+
+    </script>
+</body>
+</html>
