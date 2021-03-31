@@ -1,87 +1,159 @@
+import React, { Component } from "react";
+import { View, Text, StyleSheet, Button, TextInput, Animated } from "react-native";
 
-import React, {Component} from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  Button,
-  TextInput
-} from 'react-native';
+export default class App extends Component {
+  state = {
+    anim: new Animated.Value(0),
+  };
+
+  animate = () => {
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(this.state.anim, {
+          toValue: 1,
+          duration: 1000,
+          useNativeDriver: true,
+        }),
+        Animated.timing(this.state.anim, {
+          toValue: 0,
+          duration: 1000,
+          useNativeDriver: true,
+        })
+      ]
+      )
+    ).start();
+  };
 
 
 
-class App extends Component {
-constructor(props)
-{
-  super(props);
-  this.state={Num1:0, Num2:0, Wynik:0};
-}
-
-Sum=()=>
-{
-  var N1= parseInt(this.state.Num1);
-  var N2= parseInt(this.state.Num2);
-  var wyn = N1 + N2;
-  this.setState({Wynik}) = wyn;
-  alert(wyn);
-}
-
-Diff=()=>
-{
-  var N1= parseInt(this.state.Num1);
-  var N2= parseInt(this.state.Num2);
-  var wyn = N1 - N2;
-  alert(wyn);
-}
-
-Mul=()=>
-{
-  var N1= parseInt(this.state.Num1);
-  var N2= parseInt(this.state.Num2);
-  var wyn = N1 * N2;
-  alert(wyn);
-}
-
-Div=()=>
-{
-  var N1= parseInt(this.state.Num1);
-  var N2= parseInt(this.state.Num2);
-  var wyn = N1 / N2;
-  alert(wyn);
-}
-  render(){
-
+  render() {
     return (
-    <>
-    <View style={{flex: 1, justifyContent: 'space-around', alignItems: 'center', backgroundColor: 'green'}}>
-  
-      
-    <TextInput
-        style={{height: 40, width: 150, backgroundColor: 'orange'}}
-        placeholder="Liczba 1"
-        onChangeText={Num1=>this.setState({Num1})}
-        />
-    <TextInput
-        style={{height: 40, width: 150, backgroundColor: 'orange'}}
-        placeholder="Liczba 2"
-        onChangeText={Num2=>this.setState({Num2})}
-        />
-      <View>
-      <Button title="Oblicz sume" onPress={this.Sum}></Button>
-      <Button title="Oblicz różnice" onPress={this.Diff}></Button>
-      <Button title="Oblicz iloczyn" onPress={this.Mul}></Button>
-      <Button title="Oblicz iloraz" onPress={this.Div}></Button>
+      <View style={styles.container}>
+        <Button title="Start" onPress={this.animate}></Button>
+        <Animated.View style={[styles.circle1, {transform:
+              [
+                {
+                  translateY: this.state.anim.interpolate({
+                    inputRange:[0, 1],
+                    outputRange:[0, 250]
+                  })
+                },
+                {
+                  translateX: this.state.anim.interpolate({
+                    inputRange:[0, 1],
+                    outputRange:[0, 250]
+                  })
+                },
+                {
+                translateY: -750,
+              },
+              {
+                translateX: -150,
+              },
+              ],}]}></Animated.View>
+        <Animated.View style={[styles.circle2, {transform:
+              [
+                {
+                  translateY: this.state.anim.interpolate({
+                    inputRange:[0, 1],
+                    outputRange:[0, 250]
+                  })
+                },
+                {
+                  translateX: this.state.anim.interpolate({
+                    inputRange:[0, 1],
+                    outputRange:[0, -250]
+                  })
+                },
+                {
+                translateY: -750,
+              },
+              {
+                translateX: 150,
+              },
+              ],}]}></Animated.View>
+        <Animated.View style={[styles.circle3, {transform:
+              [
+                {
+                  translateY: this.state.anim.interpolate({
+                    inputRange:[0, 1],
+                    outputRange:[0, -250]
+                  })
+                },
+                {
+                  translateX: this.state.anim.interpolate({
+                    inputRange:[0, 1],
+                    outputRange:[0, 250]
+                  })
+                },
+                {
+                translateY: -450,
+              },
+              {
+                translateX: -150,
+              },
+              ],}]}></Animated.View>
+        <Animated.View style={[styles.circle4, {transform:
+              [
+                {
+                  translateY: this.state.anim.interpolate({
+                    inputRange:[0, 1],
+                    outputRange:[0, -250]
+                  })
+                },
+                {
+                  translateX: this.state.anim.interpolate({
+                    inputRange:[0, 1],
+                    outputRange:[0, -250]
+                  })
+                },
+                {
+                translateY: -450,
+              },
+              {
+                translateX: 150,
+              },
+              ],}]}></Animated.View>
       </View>
-      <Text
-        style={{height: 40, width: 150, backgroundColor: 'orange'}}
-        value={this.state.Wynik}
-        />
-    </View>
-    </>
-  );
-};
+    );
+  }
 }
 
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "aquamarine",
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  circle1: {
+    backgroundColor: "red",
+    width: 60,
+    height: 60,
+    borderRadius: 50,
+    position: "absolute",
+  },
+  circle2: {
+    backgroundColor: "yellow",
+    width: 60,
+    height: 60,
+    borderRadius: 50,
+    position: "absolute",
+  },
+  circle3: {
+    backgroundColor: "blue",
+    width: 60,
+    height: 60,
+    borderRadius: 50,
+    position: "absolute",
+  },
+  circle4: {
+    backgroundColor: "pink",
+    width: 60,
+    height: 60,
+    borderRadius: 50,
+    position: "absolute",
+  },
 
 
-export default App;
+})

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie - a</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="name" id="name" placeholder="imię"><br>
+        <input type="text" name="surname" id="surname" placeholder="nazwisko"><br>
+        <input type="radio" name="gender" id="man" checked value="Mężczyzna">Mężczyzna<br>
+        <input type="radio" name="gender" id="woman" value="Kobieta">Kobieta<br>
+        <label for="stat">Stan cywilny:</label><br>
+        <select name="stat" id="stat">
+            <option value="" selected disabled hidden>--wybierz--</option>
+            <option value="1">kawaler/panna</option>
+            <option value="2">żonaty/mężatka</option>
+        </select><br>
+        komputery <input type="checkbox" name="inter" id="pc" value="komputery"><br>
+        muzyka <input type="checkbox" name="inter" id="music" value="muzyka"><br>
+        motoryzacja <input type="checkbox" name="inter" id="moto" value="motoryzacja"><br>
+        moda <input type="checkbox" name="inter" id="fashion" value="moda"><br>
+        filmy <input type="checkbox" name="inter" id="movies" value="filmy"><br>
+        pokaż/ukryj - więcej o sobie <input type="checkbox" name="show" id="show" checked><br>
+        <textarea name="about" id="about" cols="30" rows="10"></textarea><br>
+        <input type="button" value="podsumuj" id="sumUp">
+
+    </form>
+    <div id="aaa">
+
+    </div>
+
+    <script>
+        show.addEventListener("change", () => {
+            if(document.getElementById("show").checked)
+                document.getElementById("about").style.display='';
+
+            else
+                document.getElementById("about").style.display='none';
+        })
+
+        sumUp.addEventListener("click", () => {
+            let name = document.getElementById("name").value;
+            let surname = document.getElementById("surname").value;
+            let gender = document.getElementsByName("gender");
+            let status = document.getElementById("stat").value;
+            let inter = document.getElementsByName("inter");
+            let about = document.getElementById("about").value;
+            let txt;
+            txt = "<p>podsumowanie:</p>";
+
+            if (name != "" && isNaN(name)) {
+                name = capitalizeFirstLetter(name);
+                txt +="<p>Imię: " + name + "</p>";
+            }
+            if (surname != "" && isNaN(surname)) {
+                surname = capitalizeFirstLetter(surname);
+                txt +="<p>Nazwisko: " + surname + "</p>";
+            }
+            if (gender[0].checked) txt += "<p>Płeć: mężczyzna </p>";
+            else txt += "<p>Płeć: kobieta </p>";
+
+            if (status == 1) txt += "<p>Status: kawaler/panna </p>";
+            else if (status == 2) txt += "<p>Status: żonaty/mężatka </p>";
+
+            let bollen = false;
+            for(let i = 0; i<5; i++)
+                if(inter[i].checked)
+                    bollen = true;
+            if(bollen)
+            {
+                txt += "<p>Zainteresowania:</p> <ul> ";
+                for(let i = 0; i<5; i++)
+                {
+                    if(inter[i].checked)
+                    txt += "<li> " + inter[i].value + "</li> " ;
+                }
+                txt += "</ul> ";
+            }
+
+            if (about != "") {
+                txt += "<p>O mnie: " + about + "</p>"
+            }
+
+            aaa.innerHTML = txt;
+
+        })
+
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+    </script>
+</body>
+</html>
